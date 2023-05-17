@@ -1,0 +1,71 @@
+<main>
+  <section class="hero">
+    <div>
+      <h1><%= username %>, get away somewhere!</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+        voluptates, quod, quia, voluptate quae voluptatem quibusdam voluptatibus
+        quos quidem quas nesciunt.
+      </p>
+    </div>
+    <button>Explore</button>
+    <img src="/images/norway-compressed.webp" alt="" />
+  </section>
+  <section class="card">
+    <h2>The UK's Best Travel Agent</h2>
+    <p>
+      Offering a unique approach, we make it our mission to create unique
+      experiences for people across the World.
+    </p>
+  </section>
+  <section class="destinations-carousel">
+    <h2>Explore Popular Destinations:</h2>
+    <image-carousel>
+      <ul>
+        <li>
+          <div>
+            <img src="/images/italy-compressed.webp" alt="" loading="lazy" />
+            <p>From £995</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <img src="/images/jamaica-compressed.webp" alt="" loading="lazy" />
+            <p>From £995</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <img src="/images/scotland-compressed.webp" alt="" loading="lazy" />
+            <p>From £995</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <img src="/images/norway-compressed.webp" alt="" loading="lazy" />
+            <p>From £995</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <img src="/images/jamaica-compressed.webp" alt="" loading="lazy" />
+            <p>From £995</p>
+          </div>
+        </li>
+      </ul>
+    </image-carousel>
+  </section>
+
+  <script type="module">
+    const carousel = document.querySelector(".destinations-carousel");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && window.innerWidth > 768) {
+          import("./scripts/carousel.js");
+        }
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(carousel);
+  </script>
+</main>
